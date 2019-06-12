@@ -55,8 +55,9 @@ public class FindKthElement {
 	public ListNode Find2(ListNode listNode, int k) {
 		int size = CalculateListSize(listNode);
 		int length = size;
-		if (k > (size - 1))
+		if (k > (size - 1)) {
 			throw new IndexOutOfBoundsException();
+		}
 		ListNode result = listNode;
 		int n = size - 1 - k;
 		// System.out.println("n=" + n);
@@ -76,8 +77,9 @@ public class FindKthElement {
 	public ListNode Find3(ListNode listNode, int k) {
 		ListNode pointer2 = listNode;
 		for (int i = 0; i <= k; i++) {
-			if (pointer2 == null)
+			if (pointer2 == null) {
 				throw new IndexOutOfBoundsException();
+			}
 			pointer2 = pointer2.getNext();
 		}
 
