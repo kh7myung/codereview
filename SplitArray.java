@@ -36,7 +36,7 @@ public class SplitArray {
 	 * additional data structure.
 	 */
 	public void SplitSorting(int array[]) {
-		boolean flag = true;
+		boolean isContinue = true;
 		while (flag) {
 			flag = false;
 			for (int j = 0; j < array.length - 1; j++) {
@@ -105,8 +105,9 @@ public class SplitArray {
 	 * using any additional data structure.
 	 */
 	public void SplitSwappingRecursive(int array[]) {
-		if (array.length == 0)
+		if (array.length == 0) {
 			return;
+		}
 
 		SplitSwappingRecursiveInner(array, 0, array.length - 1);
 	}
