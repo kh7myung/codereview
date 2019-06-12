@@ -68,10 +68,11 @@ public class SplitArray {
 				left++;
 				right--;
 			} else {
-				if (!shouldChangeLeft)
+				if (!shouldChangeLeft) {
 					left++;
-				else if (!shouldChangeRight)
+				} else if (!shouldChangeRight) {
 					right--;
+				}
 			}
 		}
 	}
@@ -84,10 +85,12 @@ public class SplitArray {
 		int left = 0;
 		int right = array.length - 1;
 		while (left < right) {
-			while (array[left] < 0 && left < right)
+			while (array[left] < 0 && left < right) {
 				left++;
-			while (array[right] >= 0 && left < right)
+			}
+			while (array[right] >= 0 && left < right) {
 				right--;
+			}
 			if (left < right) {
 				Swap(array, left, right);
 				left++;
@@ -113,8 +116,6 @@ public class SplitArray {
 	}
 
 	private void SplitSwappingRecursiveInner(int array[], int left, int right) {
-		// System.out.println("left =" + left);
-		// System.out.println("right=" + right);
 		if (left < right) {
 			boolean shouldChangeLeft = array[left] >= 0;
 			boolean shouldChangeRight = array[right] < 0;
@@ -122,10 +123,11 @@ public class SplitArray {
 				Swap(array, left, right);
 				SplitSwappingRecursiveInner(array, left + 1, right - 1);
 			} else {
-				if (!shouldChangeLeft)
+				if (!shouldChangeLeft) {
 					SplitSwappingRecursiveInner(array, left + 1, right);
-				else if (!shouldChangeRight)
+				} else if (!shouldChangeRight) {
 					SplitSwappingRecursiveInner(array, left, right - 1);
+				}
 			}
 		}
 	}
