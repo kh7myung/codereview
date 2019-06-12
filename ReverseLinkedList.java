@@ -28,8 +28,9 @@ public class ReverseLinkedList {
 	 * two additional pointers and we don't allocate memory.
 	 */
 	public ListNode reverseIterative(ListNode list) {
-		if (list.getNext() == null)
+		if (list.getNext() == null) {
 			return list;
+		}
 
 		ListNode head = null;
 		ListNode current = list;
