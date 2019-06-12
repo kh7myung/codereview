@@ -37,13 +37,13 @@ public class SplitArray {
 	 */
 	public void SplitSorting(int array[]) {
 		boolean isContinue = true;
-		while (flag) {
-			flag = false;
+		while (isContinue) {
+			isContinue = false;
 			for (int j = 0; j < array.length - 1; j++) {
 				if (array[j] > array[j + 1]) {
 					Swap(array, j, j + 1);
 					// System.out.println("flag=" + flag);
-					flag = true;
+					isContinue = true;
 				}
 			}
 		}
@@ -61,8 +61,8 @@ public class SplitArray {
 		int left = 0;
 		int right = array.length - 1;
 		while (left < right) {
-			boolean shouldChangeLeft = array[left] >= 0;
-			boolean shouldChangeRight = array[right] < 0;
+			boolean shouldChangeLeft = (array[left] >= 0);
+			boolean shouldChangeRight = (array[right] < 0);
 			if (shouldChangeLeft && shouldChangeRight) {
 				Swap(array, left, right);
 				left++;
